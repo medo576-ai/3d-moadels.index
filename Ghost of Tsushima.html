@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Frame Model</title>
+    <title>3D Frame WebAR</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer"></script>
-    <style>    
+    <style>
         body {
             margin: 0;
             overflow: hidden;
@@ -14,20 +14,20 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column; /* Allow for text at the top */
         }
-        
+
         /* Text at the top */
         .info-text {
             position: absolute;
             top: 10px;
             left: 50%;
             transform: translateX(-50%); /* Center the text horizontally */
-            font-size: 16px; /* Set font size to 3px */
+            font-size: 16px; /* Increased font size to 16px for readability */
             color: black;
             text-align: center;
         }
 
-        
         /* Remove border and box around the model */
         model-viewer {
             width: 80vw;
@@ -40,10 +40,10 @@
         /* AR Button Styling */
         .ar-button {
             position: absolute;
-            bottom: 30px;
+            bottom: 30px; /* Adjusted distance from the bottom */
             right: 16px;
-            width: 40px;
-            height: 40px;
+            width: 40px; /* Reduced size */
+            height: 40px; /* Reduced size */
             background: #dcdcdc; /* Same as the background */
             border-radius: 50%;
             border: 2px solid black;
@@ -55,8 +55,8 @@
             z-index: 10;
         }
         .ar-button img {
-            width: 30px;
-            height: 30px;
+            width: 24px; /* Reduced icon size */
+            height: 24px; /* Reduced icon size */
         }
 
         /* Button Container */
@@ -72,8 +72,8 @@
         /* Elegant Button Styling */
         .boton-elegante {
             padding: 10px 20px;
-            border: 1px solid black; /* Black border */
-            background-color: #f0f0f0; /* Light gray */
+            border: 2px solid black; /* Black border */
+            background-color: #dcdcdc; /* Light gray */
             color: black; /* Black text */
             font-size: 1rem;
             cursor: pointer;
@@ -94,7 +94,7 @@
         .white-btn {
             background-color: #f0f0f0; /* Light gray */
             color: black; /* Black text */
-            border: 1px solid black; /* Black border */
+            border: 2px solid black; /* Black border */
         }
         .white-btn:hover {
             background-color: #dcdcdc; /* Slightly darker gray */
@@ -104,19 +104,19 @@
         .gold-btn {
             background-color: #f0f0f0; /* Light gray */
             color: black; /* Black text */
-            border: 1px solid black; /* Black border */
+            border: 2px solid black; /* Black border */
         }
         .gold-btn:hover {
             background-color: #dcdcdc; /* Slightly darker gray */
         }
 
-        }
-
     </style>
 </head>
 <body>
-        <!-- Text on top of the page -->
-      <div class="info-text">The colors are not 100% like reality</div>
+
+    <!-- Text on top of the page -->
+    <div class="info-text">The 3d models are not 100% like reality</div>
+
     <!-- 3D Frame Viewer -->
     <model-viewer 
         id="frameViewer"
@@ -143,18 +143,18 @@
         <button class="boton-elegante white-btn" onclick="changeModel('white')">White</button>
         <button class="boton-elegante gold-btn" onclick="changeModel('gold')">Gold</button>
     </div>
-               /* the 3d model */
+
     <script>
         function changeModel(color) {
             const frameViewer = document.getElementById("frameViewer");
             if (color === 'black') {
-                frameViewer.src = "https://res.cloudinary.com/dwc7ebhc5/image/upload/v1737233832/black_3d_frame_model_v7ncsu.glb";
+                frameViewer.src = "https://res.cloudinary.com/dwc7ebhc5/image/upload/v1737978273/black_3d_frame_model_Ghost_of_Tsushima_n0dlyj.glb";
                 document.body.style.backgroundColor = "#dcdcdc"; // Light gray
             } else if (color === 'white') {
-                frameViewer.src = "https://res.cloudinary.com/dwc7ebhc5/image/upload/v1737977877/optimized_model_kj6h4f.glb";
+                frameViewer.src = "https://res.cloudinary.com/dwc7ebhc5/image/upload/v1737978302/white_3d_frame_model_Ghost_of_Tsushima_dx9pe9.glb";
                 document.body.style.backgroundColor = "#dcdcdc"; // Slightly darker gray for contrast
             } else if (color === 'gold') {
-                frameViewer.src = "https://res.cloudinary.com/dwc7ebhc5/image/upload/v1737657602/gold_3d_frame_model_bao9si.glb";
+                frameViewer.src = "https://res.cloudinary.com/dwc7ebhc5/image/upload/v1737978289/gold_3d_frame_model_Ghost_of_Tsushima_pyyo4g.glb";
                 document.body.style.backgroundColor = "#dcdcdc"; // Light gray
             }
         }
@@ -162,4 +162,3 @@
 
 </body>
 </html>
-
